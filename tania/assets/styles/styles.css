@@ -1,5 +1,6 @@
 body{
     font-family: 'Handjet', cursive;
+    font-size: 30px;
 }
 
 .lista{
@@ -17,4 +18,13 @@ h1,h2{
 
 h3{
     color:aqua
+}
+
+table{
+    border: 4px dashed purple;
+    margin: 20px;
+}
+
+th, td{
+    border: 4px dashed black;
 }
