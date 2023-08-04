@@ -18,32 +18,56 @@
         </nav>
         <main>
             <section>
-                <form action="" method="post"></form>
+                <form action="" method="post"></form> <!-- Action y method son atributos principales para los formularios-->
+                <fieldset> <!-- Agrupar por campos -->
+                    <legend> Datos básicos de contacto </legend>
+    
+                    <label for="">Nombre:</label>
+                    <input id="nombre" name="nombre" type="text" placeholder="Jessica" required> <br>
+                    Apellidos: <input type="text" placeholder="Rodríguez"><br>
+                    Correo electrónico: <input type="email" placeholder="tucorreo@correo.com" required><br>
+                    Número de télefono: <input type="tel" placeholder="5252525252">
+    
+                </fieldset>
+    
                 <fieldset>
-                    <legend>Datos de contacto</legend>
+                    <legend> Datos del pedido </legend>
+                    ¿Cuántos tamales necesita? <input type="number" min="20" max="500" required><br>
+                    ¿Cuántos litros de atoles necesita? <input type="number" min="4" max="40"><br>
+                    Fecha del evento <input type="date"><br>
                 </fieldset>
                 <fieldset>
-                    <legend>Datos del pedido</legend>
-
-                </fieldset>
-                <fieldset>
-                    <legend>Datos de envío</legend>
-                    <label for="sucursal">Recoger en sucursal <input type="radio" name="tipoEnvio" id="sucursal"></label><br>
-                    <label for="domicilio">Envío a domicilio <input type="radio" name="tipoEnvio" id="domicilio"></label>
-                    <select name="" id=""><br>
-                        <option value="Sucursal Oaxaca">Sucursal Oaxaca</option>
-                        <option value="">Sucursal Merida</option>
-                        <option value="">Sucursal Guadalajara</option>
+                    <legend> Datos del envío </legend>
+    
+                    <label for="sucursal">Recoger en sucursal<input type="radio" id="sucursal" name="tipo-de-envio"></label> <br>
+                    <label for="envio">Envío a domicilio <input type="radio" id="envio" name="tipo-de-envio"></label>
+    
+                    
+                    <!-- Nuestro usuario hace scroll infinito hasta encontrar la opción deseada -->
+                    Selecciona tu sucursal: <select name="" id="">
+                        <option value="Sucursal Oaxaca"> Sucursal Oaxaca </option>
+                        <option value=""> Sucursal Mérida </option>
+                        <option value=""> Sucursal Ecatepec </option>
+                        <option value=""> Sucursal casa de Mau </option>
+                        <option value=""> Sucursal Guadalajara </option>
                     </select>
+    
                     <input list="sucursales">
-                    <datalist  id="sucursales">
-                        <option value="Sucursal Oaxaca">Sucursal Oaxaca</option>
-                        <option value="">Sucursal Merida</option>
-                        <option value="">Sucursal Guadalajara</option>
-                    </datalist>
+                    <datalist id="sucursales">
+                        <option value="Sucursal Oaxaca"> Sucursal Oaxaca </option>
+                        <option value="Sucursal Mérida"> Sucursal Mérida </option>
+                        <option value="Sucursal Ecatepec"> Sucursal Ecatepec </option>
+                        <option value="Sucursal casa de Mau"> Sucursal casa de Mau </option>
+                        <option value="Sucursal Guadalajara"> Sucursal Guadalajara </option>
+                    </datalist><br>
+                    
+                    <input type="submit"><br>
+                    <button type="submit"> ¡Enviar!</button>
                 </fieldset>
-            </section>
+    
+            </section> 
         </main>
-    </header>
-</body>
-</html>
+    
+    
+    </body>
+    </html>

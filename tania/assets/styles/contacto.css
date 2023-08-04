@@ -1,0 +1,59 @@
+body{
+    background: rgb(63,94,251);
+    background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
+}
+
+h1{
+    color: ;
+}
+
+h1:hover{
+
+}
+
+nav{
+    height: 50px; /* Altura de barra de navegación*/
+    width: auto; /* El ancho de la barra de navegación se ajusta en automático al contenido dentro de ella */
+    background-color: rgb(98, 184, 219);
+    display: flex; /* Flexbox, flexible y alineada */
+    margin-bottom: 10px; 
+    border-radius: 18px; /* Redondea las esquinas de la barra */
+}
+
+nav ul{/*  Lista desordenada dentro de un elemento nav*/
+    padding: 0; /* Borra el padding (relleno interno). Los li estarán alineados con el borde izquierdo de la barra de nav*/
+    list-style-type: none; /* Elimina los bullet points que da ul por default*/
+    display: flex; /* Flexbox, permite distribución horizontal de elementos */
+    flex: 2; /* El contenedor de la ul ocupará dos partes del espacio disponible de la barra de navegación */
+}
+
+nav li {
+    display: inline; /* Elementos en línea horizontal */
+    text-align: center; 
+    flex: 1; /* Cada li ocupará una parte del espacio disponible
+ */
+}
+
+nav a{
+    display: inline-block;/*  Enlaces se comportarán como elementos en línea, pero se podría definir ancho y alto, si es necesario. */
+    font-size: 15px; 
+    text-decoration: none; /* Elimina el subrayado propio de los enlaces */
+    color: black;
+}
+
+a[href="../contacto.html"]{ /* Selector de atributo */
+    color: brown;
+}
+
+form{
+    margin: 0 auto;
+    width: 700px;
+    border: 4px ridge black;
+    padding: 15px;
+    border-radius: 1em;
+    text-align: center;
+}
+
+fieldset{
+    border-color: blueviolet;
+}
