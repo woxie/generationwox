@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="" onsubmit="workday()">
+    Día: <input id="day" type="number" required placeholder="Día" min="1" max ="31" step="1" pattern="[1-9][0-9]*"
+        onkeypress="return (event.charCode != 8 && event.charCode == 0 || (event.charCode >= 48 && event.charCode <= 57))"/>
+    Mes: <input id="month" type="number" required placeholder="Mes" min="1" max="12" step="1" pattern="[1-9][0-9]*"
+        onkeypress="return (event.charCode != 8 && event.charCode == 0 || (event.charCode >= 48 && event.charCode <= 57))"/>
+    Año: <input id="year" type="number" required placeholder="Año" min="0" step="1" pattern="\d+" onkeypress="return (event.charCode != 8 && event.charCode == 0 || (event.charCode >= 48 && event.charCode <= 57))"/>
+        <input type="submit" value="Submit">
+    </form>
+    <p></p>
+
+    <script>
+        //pass by reference (object)
+        let day = document.querySelector("#day")
+        let year = document.querySelector("#year")
+        let month = document.querySelector("#month")
+        let limite;
+
+        document.querySelectorAll("input").forEach(item => {
+            item.addEventListener("input", event => {
+                switch (parseInt(month.value)) {
+                    case 2:
+                        (parseInt(year.value) % 4 == 0 && parseInt(year.value) % 100) || parseInt(year.value) % 400 == 0 ? limite = 29 : limite = 28; break;
+                    case 4: case 6: case 9: case 11:
+                        limite = 30; break;
+                    default:
+                        limite = 31; break;
+                }
+                if (parseInt(year.value) < 0) year.value = 0;
+                if (parseInt(month.value) < 1) month.value = 1;
+                if (parseInt(month.value) > 12) month.value = 12;
+                if (parseInt(day.value) < 1) day.value = 1;
+                if (parseInt(day.value) > limite) day.value = limite;
+            })
+            // item.addEventListener("keypress", event =>{
+            //     console.log(event)
+            //     return (event.charCode != 8 && event.charCode == 0 || (event.charCode >= 48 && event.charCode <= 57))
+            // })
+        })
+
+        function workday() {
+            event.preventDefault()
+            const weekday = ["Domingo, fin de semana","Lunes, día laborable","Martes, día laborable","Miércoles, día laborable","Jueves, día laborable","Viernes, día laborable","Sábado, fin de semana"];
+            const fecha = new Date(`${year.value} ${month.value} ${day.value}`)
+            document.querySelector("p").innerHTML = weekday[fecha.getDay()]
+        }
+
+    </script>
+</body>
+
+</html>
