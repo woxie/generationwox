@@ -9,11 +9,9 @@
 
 <body>
     <form action="" onsubmit="workday()">
-    Día: <input id="day" type="number" required placeholder="Día" min="1" max ="31" step="1" pattern="[1-9][0-9]*"
-        onkeypress="return (event.charCode != 8 && event.charCode == 0 || (event.charCode >= 48 && event.charCode <= 57))"/>
-    Mes: <input id="month" type="number" required placeholder="Mes" min="1" max="12" step="1" pattern="[1-9][0-9]*"
-        onkeypress="return (event.charCode != 8 && event.charCode == 0 || (event.charCode >= 48 && event.charCode <= 57))"/>
-    Año: <input id="year" type="number" required placeholder="Año" min="0" step="1" pattern="\d+" onkeypress="return (event.charCode != 8 && event.charCode == 0 || (event.charCode >= 48 && event.charCode <= 57))"/>
+    Día: <input id="day" type="number" required placeholder="Día" min="1" max ="31" step="1" pattern="[1-9][0-9]*"/>
+    Mes: <input id="month" type="number" required placeholder="Mes" min="1" max="12" step="1" pattern="[1-9][0-9]*"/>
+    Año: <input id="year" type="number" required placeholder="Año" min="0" step="1" pattern="\d+"/>
         <input type="submit" value="Submit">
     </form>
     <p></p>
