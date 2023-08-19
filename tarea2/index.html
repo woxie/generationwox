@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adivino tu número</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
+</head>
+
+<body class="bg-light">
+
+    <body class="bg-light">
+        <div class="container text-center py-5">
+            <h1>Adivino tu número</h1>
+            <p>Piensa en un número del 1 al 100.</p>
+            <p id="restartText" style="display: none">Haz click <span id="restart"
+                    style="cursor: pointer; color: red;">aquí</span> si deseas reiniciar el juego.</p>
+            <div class="d-flex justify-content-center">
+                <button id="start" class="btn btn-primary">Iniciar</button>
+            </div>
+            <div id="gameArea" style="display: none;">
+                <p>¿Tu número es <b><span id="guessDisplay"></span></b>?</p>
+                <button id="lower" class="btn btn-secondary m-2">Menor</button>
+                <button id="higher" class="btn btn-secondary m-2">Mayor</button>
+                <button id="correct" class="btn btn-success m-2">Correcto</button>
+            </div>
+            <p id="result" style="display: none;">Tu número es <b><span id="guessedNum"></span></b>, excelente decisión.
+            </p>
+        </div>
+
+        <script>
+            let min = 1;
+            let max = 100;
+            let guess;
+
+            //Nota: el código funciona sin asignar los elementos, pero es buena práctica hacerlo
+            const start = document.querySelector("#start");
+            const gameArea = document.querySelector("#gameArea");
+            const guessDisplay = document.querySelector("#guessDisplay");
+            const lower = document.querySelector("#lower");
+            const higher = document.querySelector("#higher");
+            const correct = document.querySelector("#correct");
+            const result = document.querySelector("#result");
+            const guessedNum = document.querySelector("#guessedNum");
+            const restart = document.querySelector("#restart");
+            const restartText = document.querySelector("#restartText");
+
+            start.addEventListener("click", () => {
+                gameArea.style.display = "block";
+                restartText.style.display = "block";
+                start.style.display = "none";
+                makeGuess();
+            });
+
+            lower.addEventListener("click", () => {
+                max = guess - 1;
+                makeGuess();
+            });
+
+            higher.addEventListener("click", () => {
+                min = guess + 1;
+                makeGuess();
+            });
+
+            correct.addEventListener("click", () => {
+                result.style.display = "block";
+                guessedNum.textContent = guess;
+                gameArea.style.display = "none";
+            });
+
+            restart.addEventListener("click", () => {
+                gameArea.style.display = "none";
+                result.style.display = "none";
+                start.style.display = "block";
+                restartText.style.display = "none";
+                min = 1;
+                max = 100;
+            });
+
+            function makeGuess() {
+                guess = Math.floor((min + max) / 2);
+                guessDisplay.textContent = guess;
+            }
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+            crossorigin="anonymous"></script>
+
+    </body>
+
+</html>
