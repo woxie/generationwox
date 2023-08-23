@@ -27,7 +27,7 @@
                     <th>Nombre</th>
                     <th>Apellido</th>
                     <th>Correo</th>
-                    <th>Foto</th>
+                    <th class="d-none d-sm-block">Foto</th>
                 </tr>
             </thead>
             <tbody id="userTableBody"></tbody>
@@ -71,7 +71,7 @@
                 <td>${element.first_name}</td>
                 <td>${element.last_name}</td>
                 <td>${element.email}</td>
-                <td><img src="${element.avatar}" alt="Foto de ${element.first_name} ${element.last_name}"></td></tr>`
+                <td><img class="d-none d-sm-block" src="${element.avatar}" alt="Foto de ${element.first_name} ${element.last_name}"></td></tr>`
             })
             localStorage.setItem("contenido", contenido)
             tableBody.innerHTML = contenido;
